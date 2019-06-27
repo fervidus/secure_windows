@@ -1,12 +1,12 @@
 {
-  "name": "autostructure-secure_windows",
+  "name": "fervid-secure_windows",
   "version": "1.0.6",
   "author": "Bryan Belanger",
   "summary": "This module hardens Windows Servers to DoD STIG compliance.",
   "license": "Apache-2.0",
-  "source": "https://github.com/autostructure/secure_windows.git",
-  "project_page": "https://github.com/autostructure/secure_windows",
-  "issues_url": "https://github.com/autostructure/secure_windows/issues",
+  "source": "https://github.com/fervidus/secure_windows.git",
+  "project_page": "https://github.com/fervidus/secure_windows",
+  "issues_url": "https://github.com/fervidus/secure_windows/issues",
   "dependencies": [
     {
       "name": "ayohrling-local_security_policy",
@@ -33,7 +33,7 @@
       "version_requirement": ">= 3.1.0 < 4.0.0"
     },
     {
-      "name": "autostructure-applocker",
+      "name": "fervid-applocker",
       "version_requirement": ">= 1.0.0 < 2.0.0"
     },
     {
@@ -53,7 +53,7 @@
       "version_requirement": ">= 2.0.0 < 3.0.0"
     },
     {
-      "name": "autostructure-ad_acl",
+      "name": "fervid-ad_acl",
       "version_requirement": ">= 1.0.0 < 2.0.0"
     }
   ],
@@ -71,7 +71,7 @@
       "version_requirement": ">= 4.7.0 < 6.0.0"
     }
   ],
-  "pdk-version": "1.8.0",
-  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
-  "template-ref": "1.8.0-0-g0d9da00"
+  "pdk-version": "1.10.0",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git#1.10.0",
+  "template-ref": "tags/1.10.0-0-gbba9ac3"
 }
