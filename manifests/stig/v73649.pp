@@ -4,9 +4,7 @@ class secure_windows::stig::v73649 (
   Boolean $enforced = false,
   String $legalnoticetitle = 'US Department of Defense Warning Statement'
 ) {
-
   if $enforced {
-
     # Alternatively, the title below is also valid...
     # $legalnoticetitle = 'DoD Notice and Consent Banner'
 
@@ -16,7 +14,5 @@ class secure_windows::stig::v73649 (
       type  => 'string',
       data  => $legalnoticetitle,
     }
-
   }
-
 }

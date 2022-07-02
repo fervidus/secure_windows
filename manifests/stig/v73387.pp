@@ -9,7 +9,7 @@ class secure_windows::stig::v73387 (
       $num = 0 + $facts['maxconnidletime']
       if $num > 300 {
         exec { 'V-73387: Set NTDSUtil MaxConnIdleTime':
-          command => "C:\\Windows\\System32\\ntdsutil.exe \"LDAP policies\" \"connections\" \"connect to server ${facts['fqdn']}\" \"q\" \"Set MaxConnIdleTime to 300\" \"Commit Changes\" \"q\" \"q\"", # lint:ignore:140chars
+          command => "C:\\Windows\\System32\\ntdsutil.exe \"LDAP policies\" \"connections\" \"connect to server ${facts['networking']['fqdn']}\" \"q\" \"Set MaxConnIdleTime to 300\" \"Commit Changes\" \"q\" \"q\"", # lint:ignore:140chars
         }
       }
     }

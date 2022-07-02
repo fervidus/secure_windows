@@ -4,7 +4,6 @@ class secure_windows::stig::v73517 (
   Boolean $enforced = false,
   Enum['lock','no lock'] $hypervisorenforcedcodeintegrity = 'lock',
 ) {
-
   if $enforced {
     if($facts['windows_type'] =~ /(1|3|4|5)/) {
       $hypervisorenforcedcodeintegrityval = $hypervisorenforcedcodeintegrity ? {
@@ -19,7 +18,5 @@ class secure_windows::stig::v73517 (
         data  => $hypervisorenforcedcodeintegrityval,
       }
     }
-
   }
-
 }

@@ -3,16 +3,12 @@
 class secure_windows::stig::v73637 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73637':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters',
       value => 'SignSecureChannel',
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }

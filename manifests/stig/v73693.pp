@@ -3,16 +3,12 @@
 class secure_windows::stig::v73693 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73693':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LDAP',
       value => 'LDAPClientIntegrity',
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }

@@ -4,9 +4,7 @@ class secure_windows::stig::v73647 (
   String $legalnoticetext = 'I\'ve read & consent to terms in IS user agreement.',
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     # Any OS versions that do not support the full text version must state the following:
     # "I've read & consent to terms in IS user agreem't."
     # Deviations are not permitted except as authorized by the
@@ -27,7 +25,5 @@ class secure_windows::stig::v73647 (
     #   policy_type    => 'Registry Values',
     #   policy_value   => "7,${legalnoticetext}",
     # }
-
   }
-
 }

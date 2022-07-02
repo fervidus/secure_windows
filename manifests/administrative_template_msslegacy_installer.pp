@@ -4,7 +4,6 @@
 # \Windows\PolicyDefinitions and \Windows\PolicyDefinitions\en-US, respectively.
 #
 class secure_windows::administrative_template_msslegacy_installer {
-
   file { 'c:\Windows\PolicyDefinitions\MSS-legacy.admx':
     ensure => 'file',
     mode   => '0660',
@@ -18,5 +17,4 @@ class secure_windows::administrative_template_msslegacy_installer {
     group  => 'BUILTIN\\Administrators',
     source => 'puppet:///modules/secure_windows/stig/v73495/MSS-legacy.adml',
   }
-
 }

@@ -2,7 +2,6 @@
 #
 
 class secure_windows::applocker_startup {
-
   # Must enable access to powershell.exe since it is used by the applocker_rule provider to enforce rules.
   #
 
@@ -10,8 +9,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '%SYSTEM32%\WindowsPowerShell\v1.0\powershell.exe'
+      {
+        'path' => '%SYSTEM32%\WindowsPowerShell\v1.0\powershell.exe'
     }],
     description       => 'Allow Administrator to execute %SYSTEM32%\WindowsPowerShell\v1.0\powershell.exe',
     mode              => 'NotConfigured',
@@ -27,8 +26,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '*.*'
+      {
+        'path' => '*.*'
     }],
     description       => 'Allows members of the local Administrators group to run all Windows Installer files.',
     mode              => 'NotConfigured',
@@ -41,8 +40,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '%WINDIR%\Installer\*'
+      {
+        'path' => '%WINDIR%\Installer\*'
     }],
     description       => 'Allows members of the Everyone group to run all Windows Installer files located in %systemdrive%\Windows\Installer.',# lint:ignore:140chars
     mode              => 'NotConfigured',
@@ -55,12 +54,12 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'publisher'  => '*',
-      'product'    => '*',
-      'binaryname' => '*',
-      'hi_version' => '*',
-      'lo_version' => '0.0.0.0'
+      {
+        'publisher'  => '*',
+        'product'    => '*',
+        'binaryname' => '*',
+        'hi_version' => '*',
+        'lo_version' => '0.0.0.0'
     }],
     description       => 'Allows members of the Everyone group to run digitally signed Windows Installer files.',
     mode              => 'NotConfigured',
@@ -73,8 +72,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '*'
+      {
+        'path' => '*'
     }],
     description       => 'Allows members of the local Administrators group to run all applications.',
     mode              => 'NotConfigured',
@@ -87,8 +86,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '%PROGRAMFILES%\*'
+      {
+        'path' => '%PROGRAMFILES%\*'
     }],
     description       => 'Allows members of the Everyone group to run applications that are located in the Program Files folder.',
     mode              => 'NotConfigured',
@@ -101,8 +100,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '%WINDIR%\*'
+      {
+        'path' => '%WINDIR%\*'
     }],
     description       => 'Allows members of the Everyone group to run applications that are located in the Windows folder.',
     mode              => 'NotConfigured',
@@ -115,8 +114,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '*'
+      {
+        'path' => '*'
     }],
     description       => 'Allows members of the local Administrators group to run all scripts.',
     mode              => 'NotConfigured',
@@ -129,8 +128,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '%PROGRAMFILES%\*'
+      {
+        'path' => '%PROGRAMFILES%\*'
     }],
     description       => 'Allows members of the Everyone group to run scripts that are located in the Program Files folder.',
     mode              => 'NotConfigured',
@@ -143,8 +142,8 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'path' => '%WINDIR%\*'
+      {
+        'path' => '%WINDIR%\*'
     }],
     description       => 'Allows members of the Everyone group to run scripts that are located in the Windows folder.',
     mode              => 'NotConfigured',
@@ -157,12 +156,12 @@ class secure_windows::applocker_startup {
     ensure            => 'present',
     action            => 'Allow',
     conditions        => [
-    {
-      'publisher'  => '*',
-      'product'    => '*',
-      'binaryname' => '*',
-      'hi_version' => '*',
-      'lo_version' => '0.0.0.0'
+      {
+        'publisher'  => '*',
+        'product'    => '*',
+        'binaryname' => '*',
+        'hi_version' => '*',
+        'lo_version' => '0.0.0.0'
     }],
     description       => 'Allows members of the Everyone group to run packaged apps that are signed.',
     mode              => 'NotConfigured',
@@ -182,5 +181,4 @@ class secure_windows::applocker_startup {
     name   => 'AppIDSvc',
     enable => true,
   }
-
 }

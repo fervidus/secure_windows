@@ -4,9 +4,7 @@ class secure_windows::stig::v73521 (
   Boolean $enforced = false,
   Enum['1','3','8'] $driverloadpolicy = '1',
 ) {
-
   if $enforced {
-
     $driverloadpolicyval = $driverloadpolicy ? {
       '1' => '0x00000001',
       '3' => '0x00000003',
@@ -19,7 +17,5 @@ class secure_windows::stig::v73521 (
       type  => 'dword',
       data  => $driverloadpolicyval,
     }
-
   }
-
 }

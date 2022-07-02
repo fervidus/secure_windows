@@ -4,7 +4,7 @@ class secure_windows::stig::v73279 (
   Boolean $enforced = false,
 ) {
   if $enforced {
-    class { '::windows_firewall':
+    class { 'windows_firewall':
       ensure => 'running',
     }
   }

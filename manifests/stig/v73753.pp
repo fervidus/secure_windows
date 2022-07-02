@@ -6,7 +6,7 @@ class secure_windows::stig::v73753 (
 ) {
   if $enforced {
     if ($facts['windows_role'] and
-        $facts['windows_role'] =~ /(^20|,20,|,20$)/) {
+    $facts['windows_role'] =~ /(^20|,20,|,20$)/) {
       local_security_policy { 'Create symbolic links':
         ensure         => 'present',
         policy_setting => 'SeCreateSymbolicLinkPrivilege',

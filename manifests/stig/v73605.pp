@@ -5,10 +5,8 @@ class secure_windows::stig::v73605 (
   Optional[Boolean] $is_dod,
   Optional[String] $classification,
 ) {
-
   if $enforced {
     if $is_dod {
-
       file { 'c:/windows/temp/DoD_Root_CA_2.cer':
         ensure => 'file',
         mode   => '0660',
@@ -59,8 +57,6 @@ class secure_windows::stig::v73605 (
         root_store => 'LocalMachine',
         thumbprint => 'B8269F25DBD937ECAFD4C35A9838571723F2D026',
       }
-
     }
   }
-
 }

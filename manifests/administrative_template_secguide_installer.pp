@@ -4,7 +4,6 @@
 # \Windows\PolicyDefinitions and \Windows\PolicyDefinitions\en-US, respectively.
 #
 class secure_windows::administrative_template_secguide_installer {
-
   file { 'c:\Windows\PolicyDefinitions\SecGuide.admx':
     ensure => 'file',
     mode   => '0660',
@@ -18,5 +17,4 @@ class secure_windows::administrative_template_secguide_installer {
     group  => 'BUILTIN\\Administrators',
     source => 'puppet:///modules/secure_windows/stig/v73499/SecGuide.adml',
   }
-
 }

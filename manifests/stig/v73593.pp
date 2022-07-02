@@ -3,16 +3,12 @@
 class secure_windows::stig::v73593 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73593':
       key   => 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WinRM\Client',
       value => 'AllowBasic',
       type  => 'dword',
       data  => '0x00000000',
     }
-
   }
-
 }

@@ -3,16 +3,12 @@
 class secure_windows::stig::v73543 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73543':
       key   => 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat',
       value => 'DisableInventory',
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }

@@ -3,16 +3,12 @@
 class secure_windows::stig::v73697 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73697':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0',
       value => 'NTLMMinServerSec',
       type  => 'dword',
       data  => '0x20080000',
     }
-
   }
-
 }

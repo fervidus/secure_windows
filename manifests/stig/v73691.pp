@@ -3,16 +3,12 @@
 class secure_windows::stig::v73691 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73691':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa',
       value => 'LmCompatibilityLevel',
       type  => 'dword',
       data  => '0x00000005',
     }
-
   }
-
 }

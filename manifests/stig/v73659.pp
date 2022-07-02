@@ -3,16 +3,12 @@
 class secure_windows::stig::v73659 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73659':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters',
       value => 'autodisconnect',
       type  => 'dword',
       data  => '0x0000000f',
     }
-
   }
-
 }

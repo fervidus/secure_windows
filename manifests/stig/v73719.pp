@@ -3,10 +3,9 @@
 class secure_windows::stig::v73719 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
     if ($facts['windows_role'] and
-        $facts['windows_role'] =~ /(^35|,35,|,35$)/) {
+    $facts['windows_role'] =~ /(^35|,35,|,35$)/) {
       registry::value { 'v73719':
         key   => 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System',
         value => 'EnableLUA',
@@ -15,5 +14,4 @@ class secure_windows::stig::v73719 (
       }
     }
   }
-
 }

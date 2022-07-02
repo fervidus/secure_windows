@@ -4,16 +4,12 @@
 class secure_windows::stig::v73679 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73679':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa',
       value => 'UseMachineId',
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }

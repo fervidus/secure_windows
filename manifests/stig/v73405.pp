@@ -11,28 +11,28 @@ class secure_windows::stig::v73405 (
   if $enforced {
     $system_root = $facts['os']['windows']['system32']
 
-    acl { [ "${system_root}\\winevt\\Logs\\Application.evtx",
-            "${system_root}\\winevt\\Logs\\Security.evtx",
-            "${system_root}\\winevt\\Logs\\System.evtx",
-          ]:
-      inherit_parent_permissions => false,
-      permissions                => [
-        {
-          'identity' => 'NT SERVICE\\EventLog',
-          'rights'   => ['full'],
-          'affects'  => 'self_only',
-        },
-        {
-          'identity' => 'S-1-5-18',
-          'rights'   => ['full'],
-          'affects'  => 'self_only',
-        },
-        {
-          'identity' => 'S-1-5-32-544',
-          'rights'   => ['full'],
-          'affects'  => 'self_only',
-        }
-      ],
+    acl { ["${system_root}\\winevt\\Logs\\Application.evtx",
+        "${system_root}\\winevt\\Logs\\Security.evtx",
+        "${system_root}\\winevt\\Logs\\System.evtx",
+      ]:
+        inherit_parent_permissions => false,
+        permissions                => [
+          {
+            'identity' => 'NT SERVICE\\EventLog',
+            'rights'   => ['full'],
+            'affects'  => 'self_only',
+          },
+          {
+            'identity' => 'S-1-5-18',
+            'rights'   => ['full'],
+            'affects'  => 'self_only',
+          },
+          {
+            'identity' => 'S-1-5-32-544',
+            'rights'   => ['full'],
+            'affects'  => 'self_only',
+          }
+        ],
     }
   }
 }

@@ -3,16 +3,12 @@
 class secure_windows::stig::v73645 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73645':
       key   => 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System',
       value => 'InactivityTimeoutSecs',
       type  => 'dword',
       data  => '0x00000384',
     }
-
   }
-
 }

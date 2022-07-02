@@ -4,7 +4,6 @@ class secure_windows::stig::v73609 (
   Optional[Boolean] $is_dod,
   Optional[String] $classification,
 ) {
-
   if $enforced {
     if $is_dod {
       case $classification {
@@ -30,5 +29,4 @@ class secure_windows::stig::v73609 (
       }
     }
   }
-
 }

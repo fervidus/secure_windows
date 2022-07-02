@@ -3,11 +3,7 @@
 class secure_windows::stig::v73235 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
-    include ::secure_windows::applocker_startup
-
+    include secure_windows::applocker_startup
   }
-
 }

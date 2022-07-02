@@ -4,12 +4,10 @@ class secure_windows::stig::v73607 (
   Optional[Boolean] $is_dod,
   Optional[String] $classification,
 ) {
-
   if $enforced {
     if $is_dod {
       case $classification {
         'unclassified', undef: {
-
           #DoD_IRCA_1-to-ECA_Root_CA_2
           #DoD Root CA 2 - DoD Interoperability Root CA 1 - 22BBE981F0694D246CC1472ED2B021DC8540A22F
           #
@@ -75,5 +73,4 @@ class secure_windows::stig::v73607 (
       }
     }
   }
-
 }

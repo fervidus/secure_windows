@@ -32,29 +32,29 @@ class secure_windows::stig::v73395 (
           },
         ],
         access_rules => [
-        {
-          'identity'            => 'S-1-5-9',
-          'ad_rights'           => 'GenericRead',
-          'access_control_type' => 'Allow',
-          'inheritance_type'    => 'None'
-        },
-        {
-          'identity'            => 'S-1-5-11',
-          'ad_rights'           => 'GenericRead',
-          'access_control_type' => 'Allow',
-          'inheritance_type'    => 'None'
-        },
-        {
-          'identity'            => 'S-1-5-18',
-          'ad_rights'           => 'GenericAll',
-          'access_control_type' => 'Allow',
-          'inheritance_type'    => 'None'
-        },
-        {
-          'identity'            => "${facts['domain_sid']}-512",
-          'ad_rights'           => 'CreateChild, Self, WriteProperty, ExtendedRight, GenericRead, WriteDacl, WriteOwner',
-          'access_control_type' => 'Allow',
-          'inheritance_type'    => 'None'
+          {
+            'identity'            => 'S-1-5-9',
+            'ad_rights'           => 'GenericRead',
+            'access_control_type' => 'Allow',
+            'inheritance_type'    => 'None'
+          },
+          {
+            'identity'            => 'S-1-5-11',
+            'ad_rights'           => 'GenericRead',
+            'access_control_type' => 'Allow',
+            'inheritance_type'    => 'None'
+          },
+          {
+            'identity'            => 'S-1-5-18',
+            'ad_rights'           => 'GenericAll',
+            'access_control_type' => 'Allow',
+            'inheritance_type'    => 'None'
+          },
+          {
+            'identity'            => "${facts['domain_sid']}-512",
+            'ad_rights'           => 'CreateChild, Self, WriteProperty, ExtendedRight, GenericRead, WriteDacl, WriteOwner',
+            'access_control_type' => 'Allow',
+            'inheritance_type'    => 'None'
         }],
       }
     }

@@ -3,15 +3,13 @@
 class secure_windows::stig::v73505 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     # This policy setting requires the installation of the MSS-Legacy
     # custom templates included with the STIG package.
     # "MSS-Legacy.admx" and "MSS-Legacy.adml" must be copied to the
     # \Windows\PolicyDefinitions and \Windows\PolicyDefinitions\en-US directories respectively.
 
-    include ::secure_windows::administrative_template_msslegacy_installer
+    include secure_windows::administrative_template_msslegacy_installer
 
     registry::value { 'v73505':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netbt\Parameters',
@@ -19,7 +17,5 @@ class secure_windows::stig::v73505 (
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }

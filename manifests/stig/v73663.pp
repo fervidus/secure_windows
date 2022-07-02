@@ -3,16 +3,12 @@
 class secure_windows::stig::v73663 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73663':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters',
       value => 'EnableSecuritySignature',
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }

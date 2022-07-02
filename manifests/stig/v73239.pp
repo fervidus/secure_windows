@@ -3,7 +3,6 @@
 class secure_windows::stig::v73239 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
     if versioncmp($facts['kernelversion'], '10.0.14393') >= 0 {
       notice('In compliance with DoD STIG V-73239. System is at a supported servicing level.')
@@ -15,5 +14,4 @@ class secure_windows::stig::v73239 (
       }
     }
   }
-
 }

@@ -4,7 +4,6 @@ class secure_windows::stig::v73515 (
   Boolean $enforced = false,
   Enum['lock','no lock'] $lsacfgflags = 'lock',
 ) {
-
   if $enforced {
     if($facts['windows_type'] =~ /(1|3|4|5)/) {
       $lsacfgflagsval = $lsacfgflags ? {
@@ -20,5 +19,4 @@ class secure_windows::stig::v73515 (
       }
     }
   }
-
 }

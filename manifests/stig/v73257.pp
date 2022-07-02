@@ -3,7 +3,6 @@
 class secure_windows::stig::v73257 (
   Boolean $enforced = false,
 ) {
-
   # PS C:\Users\Administrator> Get-Printer -full -Name "Microsoft XPS Document Writer" | select PermissionSDDL
   # -ExpandProperty PermissionSDDL
   # G:SYD:(A;OIIO;GA;;;CO)(A;OIIO;GA;;;AC)(A;;SWRC;;;WD)(A;CIIO;GX;;;WD)(A;;SWRC;;;AC)(A;CIIO;GX;;;AC)(A;;LCSWDTSDRCWDWO;;;BA)
@@ -37,8 +36,6 @@ class secure_windows::stig::v73257 (
 
   # SOURCE: https://gallery.technet.microsoft.com/scriptcenter/Add-Printer-Permission-c0ece1f3
 
-
-
   # STIG - Check Content
   # --------------------
   # Open "Devices and Printers".
@@ -55,5 +52,4 @@ class secure_windows::stig::v73257 (
 
   # STIG - Fix Text
   # Configure the permissions on shared printers to restrict standard users to only have Print permissions.
-
 }

@@ -3,16 +3,12 @@
 class secure_windows::stig::v73667 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73667':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa',
       value => 'RestrictAnonymousSAM',
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }

@@ -3,7 +3,6 @@
 class secure_windows::stig::v73533 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
     if($facts['windows_type'] =~ /(1|3)/) {
       registry::value { 'v73533':
@@ -13,7 +12,5 @@ class secure_windows::stig::v73533 (
         data  => '0x00000000',
       }
     }
-
   }
-
 }

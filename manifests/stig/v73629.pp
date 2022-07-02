@@ -3,7 +3,6 @@
 class secure_windows::stig::v73629 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
     if ($facts['windows_server_type'] == 'windowsdc') {
       registry::value { 'v73629':
@@ -14,5 +13,4 @@ class secure_windows::stig::v73629 (
       }
     }
   }
-
 }

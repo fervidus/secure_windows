@@ -9,21 +9,11 @@ class secure_windows::stig::v73379 (
       $dsa_database_partition = regsubst($facts['ntds_parameters']['DSA Database file'], '^(.*:).*$', '\1')
       $hash_of_shares = $facts['shares']
       $hash_of_shares.each |$name,$path| {
-        if $name =~ /^SYSVOL/ {
-
-        }
-        elsif $name =~ /^NETLOGON/ {
-
-        }
-        elsif $name =~ /^ADMIN\$/ {
-
-        }
-        elsif $name =~ /^.{1}\$/ {
-
-        }
-        elsif $name =~ /^print\$/ {
-
-        }
+        if $name =~ /^SYSVOL/ {        }
+        elsif $name =~ /^NETLOGON/ {        }
+        elsif $name =~ /^ADMIN\$/ {        }
+        elsif $name =~ /^.{1}\$/ {        }
+        elsif $name =~ /^print\$/ {        }
         else {
           if $path =~ $dsa_database_partition {
             notify { "Share ${path} violates V-73379":

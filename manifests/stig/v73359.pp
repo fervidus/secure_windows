@@ -14,7 +14,6 @@
 class secure_windows::stig::v73359 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
     if($facts['windows_server_type'] == 'windowsdc') {
       file { 'C:\\Windows\\SYSVOL\\sysvol\\example.com\\Policies\\{31B2F340-016D-11D2-945F-00C04FB984F9}\\MACHINE\\Microsoft\\Windows NT\\SecEdit\\GptTmpl.inf': # lint:ignore:140chars
@@ -23,5 +22,4 @@ class secure_windows::stig::v73359 (
       }
     }
   }
-
 }

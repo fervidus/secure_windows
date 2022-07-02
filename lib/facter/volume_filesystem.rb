@@ -10,7 +10,7 @@ Facter.add('volume_filesystem') do
     filesystems2 = filesystems.split("\r\n")
     compliant = true
     filesystems2.each do |filesystem|
-      if filesystem =~ %r{(NTFS|ReFS|\s*)}
+      if %r{(NTFS|ReFS|\s*)}.match?(filesystem)
       else
         compliant = false
       end

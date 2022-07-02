@@ -7,11 +7,10 @@ class secure_windows::stig::v73307 (
   Boolean $enforced = false,
   String $time_server = 'tick.usno.navy.mil',
 ) {
-
   if $enforced {
     if $facts['windows_type'] =~ /(1|3|4|5)/ {
       # Domain-Joined Systems
-      if $facts['fqdn'] == $facts['pdc_emulator_role'] {
+      if $facts['networking']['fqdn'] == $facts['pdc_emulator_role'] {
         # PDC Emulator Role should sync with a DoD time source
         registry::value { 'v73307 Type':
           key    => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32time\Parameters',
@@ -62,5 +61,4 @@ class secure_windows::stig::v73307 (
       enable => true,
     }
   }
-
 }

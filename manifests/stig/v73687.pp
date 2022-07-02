@@ -3,16 +3,12 @@
 class secure_windows::stig::v73687 (
   Boolean $enforced = false,
 ) {
-
   if $enforced {
-
     registry::value { 'v73687':
       key   => 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa',
       value => 'NoLMHash',
       type  => 'dword',
       data  => '0x00000001',
     }
-
   }
-
 }
